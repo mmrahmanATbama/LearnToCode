@@ -26,17 +26,18 @@ int main()
     //unsigned double f1 = 0.0 ;    // long double
     //unsigned long double g1 = 0.0;
 
-    printf("Char %c\n",c);
-    printf("Int %d\n",a);
-    printf("Short int %d\n",b);
-    printf("Long int %d\n",d);
-    printf("float %f\n",e);
-    printf("double %f\n",f);
-    printf("long double %f\n",g);
-    printf("Unsinged Char %c\n",c1);
-    printf("unsinged int %d\n",a1);
-    printf("unsigned short int %d\n",b1);
-    printf("unsigned long int %d\n",d1);
+    printf("Data Type \tValue \tSize \tPointer \tPointer Size\n");
+    printf("Char \t\t%3c\n",c);
+    printf("Int \t\t%3d\n",a);
+    printf("Short int \t%3hd\n",b);
+    printf("Long int \t%3ld\n",d);
+    printf("Float \t\t%3.2f\n",e);
+    printf("Double \t%3.2lf\n",f);
+    printf("Long double \t%3.0Lf\n",g);
+    printf("Unsinged Char\t %c\n",c1);
+    printf("Unsinged int %d\n",a1);
+    printf("Unsigned short int %hu\n",b1);
+    printf("Unsigned long int %lu\n",d1);
 
     
     return 0;
