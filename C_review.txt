@@ -1,0 +1,1115 @@
+﻿C Programming Language review:
+
+Compilers: → use text editor, compile with gcc...
+IDE: Eclipse for C/C++
+System: RHEL 7.6  kernel3.10.0-957.el7.x86_64
+
+INDEX :  Chapter 1: Chapter 2: Chapter 3: Chapter 4:  Chapter 5: Chapter 6: Chapter 7: Chapter 8:
+Chapter 1:
+Chapter 2:
+Chapter 3:
+1.1 Getting started
+2.1 Variable names
+3.1 Statement & Blocks
+1.2 Variable arithmetic expression
+2.2 Data types and sizes
+3.2 if else
+1.4 Symbolic constant
+2.3 constants
+3.3 else if
+1.5 Char input out put
+2.4 declarations
+3.4 Switch
+1.6 Arrays
+2.5 & 2.6 Operators
+3.5 Loops -while and for
+1.7 Function
+2.7 Type conversions
+3.6 Loops -do while
+1.8 Argument -call by value
+2.8 Increment, decrement
+3.7 Break and continue
+1.9 Char Array
+2.9 Bitwise operator
+3.8 Go to and Labels
+1.10 External variable & scope
+2.10 assignment op & expr
+
+
+2.11 Conditional
+
+
+2.12 Precendence
+
+
+
+Chapter 4: 
+Chapter 5:
+Chapter 6:
+4.1 Functions
+5.1 Pointers and Address
+
+4.2 Functions returns
+5.2 P and A function args
+
+4.3 External variable
+5.3 Pointers and Arrays
+
+4.4 Scope rules
+5.4 Address arithmetic
+
+4.5 Header files
+5.5 Char pointer and function
+
+4.6 Static variable
+5.6 Ptr to Ptr
+
+4.7 Register variable
+5.7 Multi-dimensional array
+
+4.8 Block Structure
+5.8 Initialization of ptr array
+
+4.9 Initialization
+5.9 Ptr vs multi dimensional
+
+4.10 Recursion
+5.10 Command line argument
+
+4.11 C preprocessor
+5.11Ptr to function
+
+
+5.12 Complecated declaration
+
+
+
+
+
+
+
+
+Chapter 7:
+Chapter 8:
+MISC:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C program: Creation to execution: 
+
+
+→ vim
+ 
+→ 
+
+
+
+
+
+
+
+
+
+
+
+
+(https://www.ntu.edu.sg/home/ehchua/programming/cpp/c1_Basics.html)
+
+Chapter 1:
+INDEX
+
+1.1 Getting started
+Basic level editor. (Use vim and tmux for the time being)
+Install the development tool. For RHEL: `yum groupinstall ‘Development Tools’
+The development tool will install C compiler.
+Check installation: 
+`which gcc` 	
+` whereis gcc` 
+`gcc –version`
+
+write a helloWorld program (using vim).
+Save it as helloWorld.c
+compile it 
+gcc -g -O helloWorld.c -o hello -Wall  (-g enables debugger, separate file for debugger).
+this will create hello (thats the -o option).
+gcc myth1.c -o myth -lm (-lm means math function)
+gcc myth1.c -o myth -lx11 (xlib function)
+gcc src1.c src2.c src3.c -o src  (multiple source file) (makes src1.o, src2.o, src3.o puts them 	on src. If only src1.c need to be changes, recompile gcc src1.c src2.o and src3.o)
+Run it ./hello
+
+
+	
+1.2 Variable & arithmetic expression:
+<chapter two>
+
+1.4 Symbolic constant
+#define MAX_NUM 100
+magic number MAX_NUM can be used in anywhere in the program now.
+
+1.5 Char input out put
+char is a small int type.
+int c;
+c = getchar();	→ gets character from user.
+putchar(c);	→ prints the character.
+EOF → int value defined in stdio.h. 
+
+1.6 Arrays:
+<data type> <var name> [<size>]
+for example int i [10] = {0,0,0,0,0,0,0,0,0} 
+size is 10 but the index starts at 0.
+so i[0] - i[9]
+
+1.7 Function:
+<chapter 4 for details>
+
+1.8 Argument -call by value
+<chapter 4 for details>
+
+1.9 Char Array
+char array ends with null ‘\0’ . The value of null is 0
+char array example: “hello\n” → stored as ‘h’ ‘e’ ‘l’ ‘l’ ‘o’ ‘\n’ ‘\0’. = the array size is 6. Not 7!!!
+
+
+1.10 External variable & scope
+Automatic → local variables. After function call no longer in existance.
+External variables : this variable can be accessed by any function, retains value even after the function exits.		
+
+		
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chapter 2:
+INDEX
+
+2.1 Variable names:
+First character must be a letter.
+_ underscore counts as a letter but libraries uses this best to avoid in the programming.
+Case sensitive.
+Use lower case for variable names and upper case for symbolic constants.
+First 31 characters for internal and 6 characters for external are significant.
+Keywords are lower case and can not be used as variables.
+
+
+2.2 Data types and sizes:
+char: single byte (8 bits). Holds one character. (signed, unsinged) → %c
+Nibble: 4 bit, one hexadecimal digit. Since hex is 16 bit which can be grouped into 4 X 4 bit
+Int: Integer. 32 bit (signed, unsigned) → 		%d (signed) %u (unsigned)
+Short: 16 bit int  (signed, unsigned) → 		%hd, %hu
+Long: 32 to 64 bit.  (signed, unsigned) → 		%ld, %lu
+Float: Single precison floating point. 32 bit →	%f	(7 digits)
+Double: Double precison floating point. 64 bit→ 	%lf	(15 digits)
+Long Double: 96 bit. → 				%LF				
+Also: _Bool, _Complex, _Imaginery (C99)
+Derived: Array, References, pointers
+User defined: Structure, union, enum.
+
+Signed and unsigned: Unsigned only holds zero or positive number, Signed can hold negative, zero, 
+positive numbers. Signed -128 to 127, unsigned 0 to 255.
+1111 1111 – signed → -128
+0111 1111 – 		 → 127
+
+Single Vs Double precision:
+S EEEEEEEE FFFFFFFFFFFFFFFFFFFFFFF (First bit sign, next 8 exponent then Fraction 31)
+	0 1      	         8 9                    			31
+S EEE……..EE FFFFFFFFF….FFFFFFFFFFF (First bit sign, next 11 exponent then Frac. 52 )
+0 1      	          11 12                                          63 
+
+Header files: <limit.h>  (int and char)    <float.h> (float)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.3 Constants:
+
+character constant is an integer. For exampe ‘0’ has a value of 48, differs from 0.
+‘\ooo’ → one to three octal digit (0-7).
+‘\xhh’ → one or more hexadecimal digit (0-9, A-F).
+‘\0’ has a value of zero, also known as null.
+String is an array of character. String has ‘\0’ at the end. So string requires one extra storage unit.
+‘x’is an integer, “x” is string with ‘\0’ at the end.
+Enumeration Constant:
+1. `enum boolean {NO, YES}; (value start from 0 then 1 then so on.., differs when explicit)
+2. `enum escape {BELL = ‘\a’, TAB = ‘\t’};
+3. `enum months {JAN =1, FEB, <rest of the months>}; (value starts from 1 now)
+4. `enum is bit more advantageous to use then #define. 
+
+
+2.4 Declarations:
+
+<type> <var name or list> <may initialize> <semicolon>
+int           a                           = 0;   int a,b;  int a=0, b=0; 
+* example of declarations.
+    `int chr = 97;
+    unsigned char i =chr;
+    char a = 'a';
+    unsigned char b = 'b';
+    short digit1 = 100;
+    int digit2 = 100;
+    long digit3 = 100L;
+    float digit4 = 100.0f;
+    double digit5 = 100.0;
+    long double digit6 = 100.0L;
+    int digit7 = 1;
+    int digit8 =01; 	//octal representation
+    int digit9 = 0x1;	//decimal representation.
+    unsigned int digit10 = 1ul;
+    char line [25];
+    const int monts = 12;
+    const char msg[] = “Warning: ”;
+    int strlen (const char[]);        // function does not change this array.
+
+
+2.5 & 2.6 Operators:
+Arithmetic operators: 		+  -  *  /  % (modulas)
+Relational : 			>  >= < <=  == !=  (lower precedence than arithmetic)
+Logical:			&& || (evaluated from left to right, lower precedence then above)
+True expression from relational or logical expression is 1, false 0.
+
+2.7 Type conversion:
+char is a small integer and can be used in arithmetic expressions. Gives flexibility for conversions. Like string of integer to numeric integer.
+Implicit conversion:
+ 	bool -> char -> short int -> int -> 
+       	unsigned int -> long -> unsigned -> 
+       	long long -> float -> double -> long double
+Explicit conversion:
+lower (narrower) to higher data type.
+<type-name> expressions → (float) a  ….. (a now becomes type float). This is called cast.
+Casting keeps the same precedence. With casting the value of a is changed, not a itself.
+Function prototype coerce the arguments to the type declared in the prototype. So func(double a) will cause the call func(2) to become func(2.0)
+
+2.8 Increment and decrement operator:
+if n ==5,
+x = ++n make x == 6 (increment before use), but x =n++ makes x ==5, (use than increment)
+x = - - n → x == 4, x == n-- → x = 5
+Only used with variables, (i+j) ++ is illegal. However a[j++] is legal.
+
+
+2.9 Bitwise operator:
+
+C has six bitwise operators, only can be applied to integral operands( char, short, int, long). These integrals can be signed or unsigned. The six operators are:
+&  (and) → | (inclusive or) → ^ (exclusive or) → >> (right shift) → << (left shift) → - (one’s complement) 
+truth table for xor → when a is 0 and b is 1 then a^b = 1 (opposite value 1, else 0)
+a<<2 ( a shifts two bits to the left) result (a * 2 ^ 2, if a=4 then after bit shift it is 4 * 2^2 = 16). a =4, a = 0100, after bit shift, a = 10000, or a = 16.
+a >> 2 (a / 2^2) .
+& can be used for bit masking.
+|  used to turn bit on
+right shifting unsigned ensures vacated bits will be filled with 0 and not signs.
+
+2.10 Assignment operator and expressions:
+a = a+2, can be written as a+=2, or expr1 op = expr2, x * = y+1 → x = x* (y+1)
+
+2.11 Conditional expressions:
+This is also known as ternary expressions.
+For example → 	if (a > b) 											z = a; 												else z =b 
+Above example can be written as z = (a > b)? a: b
+
+2.12 Precedence
+Consult internet or google for questions. 
+
+
+
+Chapter 3:
+INDEX
+
+
+3.1 Statement & Blocks
+An expression like x +=2, x++, printf() becomes statement when terminated by semicolon.
+Group declarations and statements together surrounded by braces are {} are called block.
+
+3.2 if else
+if else statement is used to express decision. 
+If (expr) statement1 else statement2.
+Use braces {} with each if else to eliminate bugs/confusion.
+Expression is true if it is has non zero value.  (expr > 0 → true).
+Expression is false if it has a zero value (expr = 0 → false).
+
+3.3 else if
+Multi-way decision. 
+If (expression)
+else if (expression)
+else 
+
+3.4 Switch
+switch(expression) {						
+case const expr : statement; break;
+case const expr: statement; break;
+default:statement; break;
+}
+
+
+
+
+
+
+
+
+3.5 Loops -while and for
+
+
+
+
+
+
+
+
+
+3.6 Loops -do while
+	do	{
+		i = n%10 + ‘0’
+	} while (n > 0)	{
+			//do while loop construct.
+		}
+
+3.7 Break and continue
+Break → exits from for, while, do while, switch
+continue → only applies to loop. Next iteration of loop is performed. (** only for loop)
+
+3.8 Go to and Labels
+goto → program goes to the line, place instructed by go to.
+Label → same form as a variable name, followed by colon. Scope is the entire function.
+
+
+
+
+
+
+
+
+
+
+
+**** Do not use this (goto or label unless necessary) method, code can be hard to understand and maintain. Using extra test, statement, or variable, same objective is achieved. Use goto or label only in rare cases.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chapter 4: 
+INDEX
+(Call by value from Chapter 1 need to be discussed here)
+
+4.1 Functions
+Breaks larger tasks into smaller, manageable tasks. 
+Declare function prototype (definition) before use.
+
+<return type> <function name> ( <parameter> or void) { 
+<declaration>
+<statement>
+}
+call the function (example)` int a = <function name(<arguments>);
+function can be declared inside main pg 72
+call by value
+call by reference
+call by (find you tube video for the third one)
+
+
+4.2 Functions returns
+function may return nothing (void)
+or function may return → int , char, string, pointer, array etc. 
+
+Function Definition
+Function Call (argument)
+Comment
+` void func (void)
+` func();
+Does not return anything, 
+`int func (void)
+` int a = func();
+No parameter but return int
+`char func (int a, char b)
+`char c = func(x,y);
+Int and char parameters
+`void func(int a [])
+` func (a); 
+pass array as argument.a is array
+`void func (int a [][])
+`func(a);
+pass array as argument 2d array
+`void func (int *a)
+`func (a);
+
+`void func (int a)
+`func(a[x]) index, func(&a[0])
+
+`
+`
+To be continued.
+`
+`
+
+`
+`
+
+`
+`
+
+`
+`
+
+`
+`
+
+`
+`
+
+`
+`
+
+
+
+
+
+4.3 External variable:
+This has been discussed in chapter 1. 
+Internal : declared inside a function.
+External : declared outside of function.
+External variables can be shared among functions. → watch out (data may unintentionally changed by a function)
+Functions are external, c does not allow functions to be defined inside a function.
+Page → 72 function was declared in the main, defined outside.
+Do not use external variables unless necessary.
+
+
+4.4 Scope rules:
+The scope of a name is → the part of the program within which the name can be used.
+Local (automatic) variable → scope is within the function in which the variable is declared.
+Global (extern) → scope while the program is running.
+More on external scope :
+
+
+
+
+
+
+
+
+
+
+
+4.5 Header files: 
+(Resources 1, not the book)
+
+A header file is a file containing C declarations and macro definitions to be shared between several source files.  
+Header files serve two purposes: 
+System header files declare the interfaces to parts of the operating system. Used to invoke system calls and libraries. → #include<stdio.h>
+Programmer created header files contain declarations for interfaces between the source files of custom program. → include “custom.h”   : (notice differs from system headers)
+
+Including a header file produces the same results as copying the header file into each source file that needs it. Such copying would be time-consuming and error-prone. With a header file, the related declarations appear in only one place. If they need to be changed, they can be changed in one place, and programs that include the header file will automatically use the new version when next recompiled. The header file eliminates the labor of finding and changing all the copies as well as the risk that a failure to find one copy will result in inconsistencies within a program. 
+In C, the usual convention is to give header files names that end with .h. It is most portable to use only letters, digits, dashes, and underscores in header file names, and at most one dot. 
+#ifndef HEADER_FILE			→ if header file has not been defined, then define it
+#define HEADER_FILE	→ once only header			
+the entire header file file 
+#endif
+
+Computed headers:
+
+	
+
+   
+
+
+
+
+This is an example of header file for quick reference. 
+
+
+
+
+
+
+
+
+
+4.6 Static variable:
+makes a variable private to the file it was declared.
+Preserve value even after being out of scope. Example: how many times a function was accessed.
+A static global variable or a function is "seen" only in the file it's declared in
+declaration → static int i = 0;
+
+4.7 Register variable:
+can access registers directly
+declaration → register int i;
+
+4.8 Block Structure:
+
+
+4.9 Initialization:
+
+
+4.10 Recursion:
+
+function calling function . 
+
+4.11 C preprocessor:
+Preprocessor is like text substitution.
+
+Sr.No.
+Directive & Description
+1
+#define: Substitutes a preprocessor macro.
+2
+#include: Inserts a particular header from another file.
+3
+#undef :Undefines a preprocessor macro.
+4
+#ifdef :Returns true if this macro is defined.
+5
+#ifndef :Returns true if this macro is not defined.
+6
+#if :Tests if a compile time condition is true.
+7
+#else :The alternative for #if.
+8
+#elif: #else and #if in one statement.
+9
+#endif :Ends preprocessor conditional.
+10
+#error :Prints error message on stderr.
+11
+#pragma: Issues special commands to the compiler, using a standardized method.
+
+Predefine Macros : __DATE__, __TIME__, __LINE__, __FILE__ → strings.
+Operators:
+Macro continuation: “\” (if macro needs more than a single line)
+Stringize (#): Converts a macro parameter into a string constant.
+Token pasting(##) : combines two arguments.
+Defined → if !defined (message) #define message hi #endif
+Parameterized macro: #define square (x) ((x) * (x))
+
+
+
+
+
+
+
+
+Chapter 5:
+INDEX
+
+5.1  Pointers and Address:
+	Pointer is a type of variable that holds the address of another variable. Using the pointer variable it is possible to access and manipulate the variable the pointer is pointing to.
+
+`int a = 5; 		//declares an int variable and initialize it to 
+`int b = 10;		// … look up table keeps track of the variable addresses.
+`char c = ‘a’;		
+`char cArray[5];	// this is an array of char type or a String. 
+`char cArray1 [] = 
+
+Pointers are declared this way:
+`int *aPtr; 		// C enforces strict type. So this pointer can only point to integer type.
+`float *fPtr;		// This declaration gets a pointer variable, this pointer variable itself ..
+`char *cPtr;		// .. occupies space in the stack. The pointer variable has an address..
+`double *dPtr;	// .. as well.
+
+Address: 
+`&a; 			// this will get the address of a
+`&aPtr;		// this will get the address of aPtr. This may occupy 4 bytes in stack.
+`			// the address scheme is different with array ……!!!
+Pointer pointing to address:
+` aPtr = &a; 		// aPtr has to be a intPtr type, a has to be int. This will store the address ..
+			// .. of a in the aPtr. Notice aPtr without * and &a  
+			// aPtr has the address of a and *aPtr is the value (this * is dereferencing)
+` b =*aPtr;		// b is assigned value of *aPtr (or the value aPtr points to)
+` *aPtr = 20;		// a = 20, without & assignment, aPtr is still pointing to a
+` *aPtr = *aPtr +10;	// a =30.
+` b = *aPtr +1;		// b =31.
+` *aPtr =b, 		// a gets the value of b, but *aPtr does not point to b (not unless & used)
+` (*aPtr)++ 		// without the () the aPtr would be increased, the value is increased by 1
+` ++*aPtr		//
+` *aPtr =+1 		// increases value
+` aPtr = bPtr		// aPtr points to whatever bPtr points to.
+` int *e, *f;
+` e = &a;
+` f = e;			// f will point to a also, since e points to a.
+` *f = *e 		// 
+e = e +1 ;		// this will increment the address, increments address 4 bytes, if int type.
+
+So declaration, assignment and de-reference.
+
+5.2  Pointer and function arguments:
+	Pointers can be used as function parameters. This enables the function to alter the value of variable directly. This direct alteration is called call by reference. Call by value is the traditional way the function gets a copy of the variable. 
+
+
+
+Call by Value
+Call by reference
+`void callbyValue (int a, int b)
+
+`int main()
+{
+….
+   callbyValue(a,b);   
+   return 0;
+}
+
+void callbyValue(int a, int b)
+{
+….
+    temp = a;
+    a = b;
+    b = temp;
+}
+
+(This will not work, since the callbyValue method only manipulates a copy of the variables)
+Void callByRef(int *a, int *b)
+
+int main()
+{
+….
+ callByRef(&a,&b);
+
+return 0;
+}
+
+void callByRef(int *a, int *b)
+{
+  …
+  int temp = *a;
+  *a = *b;
+   *b = temp;
+}
+(This works because the address of var passed to the function)
+	
+	
+
+5.3  Pointers and Arrays:
+Strong relationship between pointers and array
+Pointer can be used instead of array subscription.
+Example:
+int arr[5] 		→ declare an array that holds 5 int values
+int *pa 		→ a pointer to an integer
+pa = &arr[0]	→ pa contains the address of arr[0]
+pa = arr
+int * pa1 = arr 	→ book example, best not use this way.
+x = *pa		→ copy the contents of arr[0] into x
+pa += 1		→ contains the address of next element
+*(pa + 1)		→ contents of the next array element 
+pa = &arr[0] can be written as  → pa = arr
+‘&arr[0]’ and ‘arr’ represents the same address
+‘arr[i]’ and ‘*(pa + i)’ → equivalent , indexing vs dereferencing.
+‘&arr[i] and ‘ pa +i’ → equivalent, address value
+→ → pa is a pointer variable and arr is an array, arr is not a variable so the following statements are illegal
+arr = pa  → however pa = arr  is legal
+arr++ → however pa++ is legal 
+
+
+Function calls (also in Ch 4: Function area)
+
+`void func(int a [])
+` func (a); 
+pass array as argument.a is array
+`void func (int a [][])
+`func(a);
+pass array as argument 2d array
+`void func (int *a)
+`func (a); func(&a); func(&a[0])
+
+`void func (int a)
+`func(a[x]) index, func(&a[0])
+
+
+
+5.4  Address arithmetic:
+P is a pointer to an element of array, then p++ points to the next element, access by *(p++).
+alloc(n) and afree(p) → storage allocated on stack LIFO method.
+malloc(n), free → storage on heap.   *** unless memory is freed , it will cause memory leak.
+If p and q points to the same array then ‘==’ ‘!=’ ‘<’ ‘>’
+Pointer arithmetic is consistent. For int it would advance 4 bytes, for char is would advance 1 byte.
+Adding, subtracting or multiplying two pointers not allowed.
+Pointer can be assigned to another type with casting.
+Void * pointer may be assigned to another pointer.
+
+5.5  Char pointer and function:
+char *pmessage;
+pmessage = “String pointer example.”	// pmessage assigned a pointer to the char array
+char amsg [] = “String message” 		// array with \0 at the end.
+char *pmsg = “String pointer”		//  the contents of the String can not be modified.
+*** to copy a string of char need to use loop, simple operation like s = t will not work. s = t
+will copy the pointer but not the character itself.
+
+5.6  pointer arrays and Ptr to Ptr:
+
+Pointers are variables, so they can be stored in an array just as other variables can.
+char *linePtr[10]	// this reads an array of char pointer that holds 10 element
+→ char line[10] 	// array of char that holds 10 elements
+void writeline(char *linePtr[], int nLines) → function parameter using array of pointers
+
+	Pointer to Pointer
+`int *ptr  → ptr variable
+`int **ptr1 → pointer to pointer variables
+` ptr1 = &ptr → assign address of pointer to the pointer to pointer variables
+dereference → **ptr.
+
+5.7  Multi-dimensional array:
+`int arr[3][4] = {…} 		// two dimensional array
+`int *ptr = &arr[0][0]
+address mapping → arr[i][j] = baseAddress + [(i x no_of_cols + j) x size_of_data_type]
+Using ptr → arr[i][j] = *(ptr + (i x no_of_cols + j))
+function declaration →
+func (int arr [3][4]) {….}
+func (int arr [][4]) { …} 		// ok, because number of row is irrelevant
+func (int (*arr [4]) {…}		
+all the of the above are correct, use the with most easy to understand code.
+
+
+5.8  Initialization of ptr array:
+Initialization of pointer array can be done like this:
+char * month[] = {“invalid”, “Jan”, …… “Dec”}
+	
+5.9  Ptr vs multi dimensional:
+`int a [10][20] → 200 int sized location
+int b [][10] → variable length, need to be initialized statically or with code
+
+5.10  Command line argument:
+main(argc, char *argv[]) → argv[0]  is the name by which program was invoked
+if argc is 1, then there is no command line argument 
+argc → number of arguments
+argv[] → array of char pointer
+
+5.11 Ptr to function:
+function itself is not a variable, however by defining  pointers to function, it is possible to assign, place in array, passed to functions, returned by functions.
+Any pointer can be cast to void * and back again without loss of information. 
+int (*comp) (void*, void*) 	// declaration, comp is a pointer to a function 
+call → (*comp) (var, var)
+wrong → int *com(void *, void *) → means return a pointer to int.
+
+5.12  Complicated declaration:
+int *f()
+int (*pf) ()
+char ** argv
+int (*daytab [13])
+void *comp()
+void (*comp) ()
+char (*(*x()) []) () →  function returning pointer to array of pointer to function returning char
+char (*(*x[3]) ()) [5] → array[3] of pointers to function returning pointer to array of character
+→ → DO NOT USE COMPLICATED declaration 
+
+
+
+
+
+
+
+
+
+
+Pointer exercises: Covering all the section of pointer chapter.
+
+Try to write self contained programs, so that eventually this programs can be put into individual files and use make files to compile and build programs.
+Debug, unit test (unit test enough to understand programmings)
+start following good coding practices.
+
+
+Declare, types, sizes, addresses: 
+declare pointers of different data types, dereference them and notice the size of different pointer types. (get all the data types from previous chapters)
+use strict compilation, compiler should not have any error.
+Know the type of compilers being used, standards (this would go to chapter 1)
+
+Pointer and function arguments
+write a program that would take pointers as function parameters, use both call by value and call by reference methods. 
+Pointers and arrays
+use pointers and arrays in a program.
+Write a program that would generate 50 random numbers and store it in an array. Use any method to sort the array. Use indexing for this program. 
+Above program, use pointers, pointer arithmetic, function etc. no array indexing.
+
+Address arithmetic
+write a program to understand address arithmetic, use several different data types.
+Use out of bound array indexing and create execptions.
+
+
+
+
+Chapter 6:
+INDEX
+
+
+
+
+Chapter 7:
+INDEX
+
+
+
+
+Chapter 8:
+INDEX
+
+
+
+
+MISC:
+INDEX
+
+
+Question : 
+variadic function in C? 
+Function declared inside main?
+
+6 days of a week self task (personal time, not work time):
+Identify from work assignment: 
+subjects needing additional study. (for example last week: find and grep commands to help work)
+Study those subjects for one hour. (These are priority 1 task until comfortable)
+Glance at all priority 1 task everyday (for example : glance at this C note everyday until comfortable. Idea is to “prevent loose it if you do not use it”.
+Divide the C chapter in 6 parts. Read one or two section everyday. 
+Write one C program everyday. (Even if is hello world type program. Preferably use pointer, struct etc.)
+ Until comfortable with Command line, do not use Eclipse or any other IDE. From experience, the IDE itself has a learning curve.
+Locate stdio.h (updatedb)
+find the max size : 
+
+
+For work:
+*Debug, *logging, *C , C++, JAVA, Threading, Postgress, Makefile, ISO, 
+
+Printf modifiers:
+// source : https://alvinalexander.com/programming/printf-format-cheat-sheet
+
+%c
+character
+%d
+decimal (integer) number (base 10)
+%e
+exponential floating-point number
+%f
+floating-point number
+
+
+
+
+%i
+integer (base 10)
+%o
+octal number (base 8)
+%s
+a string of characters
+%u
+unsigned decimal (integer) number
+
+
+
+
+%x
+number in hexadecimal (base 16)
+%%
+print a percent sign
+\%
+print a percent sign
+%p
+Prints pointer address
+
+
+\a
+audible alert
+\b
+backspace
+\f
+form feed
+\n
+newline, or linefeed
+\r
+carriage return
+\t
+tab
+\v
+vertical tab
+\\
+
+
+
+Description
+Code
+Result
+A simple string
+printf("'%s'", "Hello");
+'Hello'
+A string with a minimum length
+printf("'%10s'", "Hello");
+'     Hello'
+Minimum length, left-justified
+printf("'%-10s'", "Hello");
+'Hello     '
+
+
+
+Code
+Result
+Print one position after the decimal
+printf("'%.1f'", 10.3456);
+'10.3'
+Two positions after the decimal
+printf("'%.2f'", 10.3456);
+'10.35'
+Eight-wide, two positions after the decimal
+printf("'%8.2f'", 10.3456);
+'   10.35'
+Eight-wide, four positions after the decimal
+printf("'%8.4f'", 10.3456);
+' 10.3456'
+Eight-wide, two positions after the decimal, zero-filled
+printf("'%08.2f'", 10.3456);
+'00010.35'
+Eight-wide, two positions after the decimal, left-justified
+printf("'%-8.2f'", 10.3456);
+'10.35   '
+Printing a much larger number with that same format
+printf("'%-8.2f'", 101234567.3456);
+'101234567.35'
+
+
+At least five wide
+printf("'%5d'", 10);
+'   10'
+At least five-wide, left-justified
+printf("'%-5d'", 10);
+'10   '
+At least five-wide, zero-filled
+printf("'%05d'", 10);
+'00010'
+At least five-wide, with a plus sign
+printf("'%+5d'", 10);
+'  +10'
+Five-wide, plus sign, left-justified
+printf("'%-+5d'", 10);
+'+10  '
+
+
+printf("%03d", 0);
+000
+printf("%03d", 1);
+001
+printf("%03d", 123456789);
+123456789
+printf("%03d", -10);
+-10
+printf("%03d", -123456789);
+-123456789
+
+
+printf("%-3d", 0);
+0
+printf("%-3d", 123456789);
+123456789
+printf("%-3d", -10);
+-10
+printf("%-3d", -123456789);
+-123456789
+
+
+printf("%3d", 0);
+0
+printf("%3d", 123456789);
+123456789
+printf("%3d", -10);
+-10
+printf("%3d", -123456789);
+-12345678
+
+// Source end : https://alvinalexander.com/programming/printf-format-cheat-sheet
+
+
+Resources:
+1. https://gcc.gnu.org/onlinedocs/cpp/Header-Files.html
+
