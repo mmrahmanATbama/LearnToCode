@@ -4,8 +4,8 @@
  */
  
 // add array, structure, function also one section 1
-#include<stdio.h>
 
+#include "pointers.h"
 
 int main()
 {

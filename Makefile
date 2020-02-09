@@ -3,9 +3,9 @@
 #
 
 a: pointerDeclaration.o
-	gcc pointerDeclaration.o -o a
+	gcc pointerDeclaration.o pointers.h -o a
 
-pointerDeclaration.o: pointerDeclaration.c
+pointerDeclaration.o: pointerDeclaration.c pointers.h
 	gcc -c -Wall pointerDeclaration.c
 
 clean:
