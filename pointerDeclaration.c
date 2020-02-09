@@ -1,14 +1,15 @@
+// under construction. Remove this line when it is no longer under construction. 
 /*
  * Pointer in c. This program shows how to declare, assign and dereference pointers
  */
  
-
+// add array, structure, function also one section 1
 #include<stdio.h>
 
 
 int main()
 {
-// C data type and pointer declartions.
+//1: C data type and pointer declartions.
 
 
     char c = 'a';
@@ -39,7 +40,22 @@ int main()
     printf("Unsigned short int %hu\t%2lu \t %p \t%3lu\n",b1,sizeof(b1),&b1,sizeof(&b1));
     printf("Unsigned long int %2lu\t%2lu \t %p \t%3lu\n",d1,sizeof(d1),&d1,sizeof(&d1));
 
-    
     return 0;
+} 
 
-}    
+/*
+Section 1 output
+Data Type 	    Value 	Size 		Pointer 	Pointer Size
+Char 		       a 	 1 	 0x7fff75ad7c2f 	  8
+Int 		       0 	 4 	 0x7fff75ad7c28 	  8
+Short int 	       0	 2 	 0x7fff75ad7c26 	  8
+Long int 	       0	 8 	 0x7fff75ad7c18 	  8
+Float 		       0.00	 4 	 0x7fff75ad7c14 	  8
+Double 		       0.00	 8 	 0x7fff75ad7c08 	  8
+Long double 	   0.00	16 	 0x7fff75ad7bf0 	  8
+Unsinged Char	   a	 1 	 0x7fff75ad7bef 	  8
+Unsinged int 	   0	 4 	 0x7fff75ad7be8 	  8
+Unsigned short int 0	 2 	 0x7fff75ad7be6 	  8
+Unsigned long int  0	 8 	 0x7fff75ad7bd8 	  8
+
+*/ 
