@@ -26,18 +26,18 @@ int main()
     //unsigned double f1 = 0.0 ;    // long double
     //unsigned long double g1 = 0.0;
 
-    printf("Data Type \tValue \tSize \tPointer \tPointer Size\n");
-    printf("Char \t\t%3c\n",c);
-    printf("Int \t\t%3d\n",a);
-    printf("Short int \t%3hd\n",b);
-    printf("Long int \t%3ld\n",d);
-    printf("Float \t\t%3.2f\n",e);
-    printf("Double \t%3.2lf\n",f);
-    printf("Long double \t%3.0Lf\n",g);
-    printf("Unsinged Char\t %c\n",c1);
-    printf("Unsinged int %d\n",a1);
-    printf("Unsigned short int %hu\n",b1);
-    printf("Unsigned long int %lu\n",d1);
+    printf("Data Type \tValue \tSize \t\tPointer \tPointer Size\n");
+    printf("Char \t\t%4c \t%2lu \t %p \t%3lu\n",c,sizeof(c),&c,sizeof(&c));
+    printf("Int \t\t%4d \t%2lu \t %p \t%3lu\n",a,sizeof(a),&a,sizeof(&a));
+    printf("Short int \t%4hd\t%2lu \t %p \t%3lu\n",b,sizeof(b),&b,sizeof(&b));
+    printf("Long int \t%4ld\t%2lu \t %p \t%3lu\n",d,sizeof(d),&d,sizeof(&d));
+    printf("Float \t\t%3.2f\t%2lu \t %p \t%3lu\n",e,sizeof(e),&e,sizeof(&e));
+    printf("Double \t\t%3.2lf\t%2lu \t %p \t%3lu\n",f,sizeof(f),&f,sizeof(&f));
+    printf("Long double \t%3.2Lf\t%2lu \t %p \t%3lu\n",g,sizeof(g),&g,sizeof(&g));
+    printf("Unsinged Char\t %3c\t%2lu \t %p \t%3lu\n",c1,sizeof(c1),&c1,sizeof(&c1));
+    printf("Unsinged int \t%4d\t%2lu \t %p \t%3lu\n",a1,sizeof(a1),&a1,sizeof(&a1));
+    printf("Unsigned short int %hu\t%2lu \t %p \t%3lu\n",b1,sizeof(b1),&b1,sizeof(&b1));
+    printf("Unsigned long int %2lu\t%2lu \t %p \t%3lu\n",d1,sizeof(d1),&d1,sizeof(&d1));
 
     
     return 0;

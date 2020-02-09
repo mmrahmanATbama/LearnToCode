@@ -6,7 +6,7 @@ a: pointerDeclaration.o
 	gcc pointerDeclaration.o -o a
 
 pointerDeclaration.o: pointerDeclaration.c
-	gcc -c pointerDeclaration.c
+	gcc -c -Wall pointerDeclaration.c
 
 clean:
 	rm *.o a
