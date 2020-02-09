@@ -5,16 +5,13 @@ PAGE UNDER CONSTRUCTION
 C Programming Language review:
 
 Compilers: → use text editor, compile with gcc...
-IDE: Eclipse for C/C++
 System: RHEL 7.6  kernel3.10.0-957.el7.x86_64
-
-INDEX :  Chapter 1: Chapter 2: Chapter 3: Chapter 4:  Chapter 5: Chapter 6: Chapter 7: Chapter 8:
 
 Chapter 1:
 
 
 1.1 Getting started
-Basic level editor. (Use vim and tmux for the time being)
+Basic level editor. (Use vim and tmux in the beginning, after the command line is understood, then use IDE)
 Install the development tool. For RHEL: `yum groupinstall ‘Development Tools’
 The development tool will install C compiler.
 Check installation: 
@@ -25,17 +22,17 @@ Check installation:
 write a helloWorld program (using vim).
 Save it as helloWorld.c
 compile it 
-gcc -g -O helloWorld.c -o hello -Wall  (-g enables debugger, separate file for debugger).
+gcc -g -O helloWorld.c -o hello -Wall  (-g enables debugger).
 this will create hello (thats the -o option).
 gcc myth1.c -o myth -lm (-lm means math function)
 gcc myth1.c -o myth -lx11 (xlib function)
-gcc src1.c src2.c src3.c -o src  (multiple source file) (makes src1.o, src2.o, src3.o puts them 	on src. If only src1.c need to be changes, recompile gcc src1.c src2.o and src3.o)
+gcc src1.c src2.c src3.c -o src  (multiple source file) (makes src1.o, src2.o, src3.o puts them on src. 
+				If only src1.c need to be changes, recompile gcc src1.c src2.o and src3.o)
 Run it ./hello
 
 
 	
 1.2 Variable & arithmetic expression:
-<chapter two>
 
 1.4 Symbolic constant
 #define MAX_NUM 100
