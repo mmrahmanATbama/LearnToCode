@@ -4,4 +4,5 @@
 #define pointers
 #include<stdio.h>
 
+void pointerOpBasic(int a, int b, int* ptr);
 #endif

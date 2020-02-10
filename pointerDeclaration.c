@@ -9,7 +9,8 @@
 
 int main()
 {
-//1: C data type and pointer declartions.
+//1: C data type and pointer declartions. 
+//Declare in main, print in main.
 
 
     char c = 'a';
@@ -39,6 +40,18 @@ int main()
     printf("Unsinged int \t%4d\t%2lu \t %p \t%3lu\n",a1,sizeof(a1),&a1,sizeof(&a1));
     printf("Unsigned short int %hu\t%2lu \t %p \t%3lu\n",b1,sizeof(b1),&b1,sizeof(&b1));
     printf("Unsigned long int %2lu\t%2lu \t %p \t%3lu\n",d1,sizeof(d1),&d1,sizeof(&d1));
+
+
+// Section 2: pointer assignment, address arithmatic, increment etc. 
+// use header file to do the above task. 
+// Works as a reference for basic level header file.
+// declare variables here, define function in pointers.h and implement in pointers.c
+// assign a pointer address
+// change the value using a different variable and pointer
+// increment value using dereference
+// increment address pointer
+ 
+
 
     return 0;
 } 
