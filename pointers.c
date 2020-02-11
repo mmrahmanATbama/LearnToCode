@@ -19,5 +19,11 @@ void pointerAsgn(int a, int b, int* ptr)
     *ptr = b;   // the value where the ptr is pointing will change, ptr is not pointing to b,
                 // the value of a will change.
     printf("*ptr = b, will make value of a: %d, \tvalue of *ptr: %d\n",a,*ptr);
+    // here a value will be 5, because this is a call by value, in the main, the variable
+    // pointer pointing to will change to b value.So make the b value 50 here and notice the 
+    // value changes in the main.
+    b = 50;
+    *ptr = b;
+    printf("B value in the pointers.c is %d, *ptr is %d\n",b,*ptr);
 
 }

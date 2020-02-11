@@ -60,7 +60,12 @@ int main()
     pointerOpBasic1(aa,bb,&aa);
     pointerAsgn(aa,bb,ptr);
     *ptr = bb;
-    printf("In the main -> *ptr = bb, will make value of a: %d, \tvalue of *ptr: %d\n",a,*ptr);
+    printf("In the main -> *ptr = bb, will make value of aa: %d, \tvalue of *ptr: %d\n",aa,*ptr);
+
+    // this is where aa values should change to 50, this is changed in the pointers
+   
+   pointerAsgn(aa,bb,ptr);
+   printf("The value of aa %d, bb %d, *ptr %d\n",aa,bb,*ptr);
 
 
     return 0;
