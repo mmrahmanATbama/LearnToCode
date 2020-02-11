@@ -1,0 +1,49 @@
+Data Type 	Value 	Size 		Pointer 	Pointer Size
+Char 		   a 	 1 	 0x7ffe243e26e7 	  8
+Int 		   0 	 4 	 0x7ffe243e26e0 	  8
+Short int 	   0	 2 	 0x7ffe243e26de 	  8
+Long int 	   0	 8 	 0x7ffe243e26d0 	  8
+Float 		0.00	 4 	 0x7ffe243e26cc 	  8
+Double 		0.00	 8 	 0x7ffe243e26c0 	  8
+Long double 	0.00	16 	 0x7ffe243e26b0 	  8
+Unsinged Char	   a	 1 	 0x7ffe243e26af 	  8
+Unsinged int 	   0	 4 	 0x7ffe243e26a8 	  8
+Unsigned short int 0	 2 	 0x7ffe243e26a6 	  8
+Unsigned long int  0	 8 	 0x7ffe243e2698 	  8
+In the main ptr dereference 5 
+Function : pointerOpBasic
+pointerOpBasic: The value of ptr is 5
+
+pointerOpBasic1: The value of ptr is 5
+Function : pointerAsgn
+PointerAsgn before assignment *ptr: 5
+PointerAsgn before assignment  a  : 5
+PointerAsgn before assignment  b  : 10
+*ptr = b, will make value of a: 5, 	value of *ptr: 10
+B value in the pointers.c is 50, *ptr is 50
+
+In the main -> *ptr = bb, will make value of aa: 10, 	value of *ptr: 10
+Function : pointerAsgn
+PointerAsgn before assignment *ptr: 10
+PointerAsgn before assignment  a  : 10
+PointerAsgn before assignment  b  : 10
+*ptr = b, will make value of a: 10, 	value of *ptr: 10
+B value in the pointers.c is 50, *ptr is 50
+
+The value of aa 50, bb 10, *ptr 50
+
+Function : pointerMath
+The value of aa 50, bb 75, *ptr 75 
+The address of aa 0x7ffe243e2694 
+The address of bb 0x7ffe243e2690 
+The address of *ptr 0x7ffe243e2690 
+The value of a 125
+The value of b 126
+The value of a 126
+The value of a 126 
+The value of a 127
+The value of b is 126
+The value of b is 127
+The address of *ptr is 0x7ffe243e2690
+The address of *ptr is 0x7ffe243e2694
+
