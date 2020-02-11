@@ -40,7 +40,33 @@ void pointerMath(int* a,int* b,int* ptr)
     printf("The address of bb %p \n",b);
     printf("The address of *ptr %p \n",ptr); // The address of bb and ptr should be same.
 
-    *a = *a + *b;   
+    *a = *a + *b;  // *a should be 125
+    printf("The value of a %d\n",*a);
+    
+    *b = *a + 1; // b should be 126
+    printf("The value of b %d\n",*b);
+    
+    ++*a;   // the value of a will be 126 in the next line
+    printf("The value of a %d\n",*a);
+
+    printf("The value of a %d \n",(*a)++); //the value of a should be 126 , but it should increment after use
+    printf("The value of a %d\n",*a);
+
+    printf("The value of b is %d\n", *b); // should be 126 from few lines ago.
+    b = a;  // b is getting the content of a, so b should be 127, another way of assigning value.
+    printf("The value of b is %d\n", *b); 
+
+    //address increment, will be useful for array
+    
+    printf("The address of *ptr is %p\n", ptr);
+    ptr++; // increments the address by 4 bytes, since it is int type, this increment is data type dependent
+    printf("The address of *ptr is %p\n", ptr);
+
+
+
+
+
+
     printf("\n");
  
 
