@@ -4,5 +4,7 @@
 #define pointers
 #include<stdio.h>
 
-void pointerOpBasic(int a, int b, int* ptr);
+void pointerOpBasic(int a, int b, int* ptr); // example of passing parameters
+void pointerOpBasic1(int , int ,int*);
+void pointerAsgn(int, int , int*);         // change pointers value using assignment
 #endif

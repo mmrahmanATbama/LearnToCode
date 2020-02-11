@@ -51,6 +51,16 @@ int main()
 // increment value using dereference
 // increment address pointer
  
+    int aa = 5;          // declare variable here, 
+    int bb = 10;
+    int* ptr = NULL;    // intialize pointing to NULL
+    ptr = &aa;           // this is assignment,
+    printf("In the main ptr dereference %d \n",*ptr); // this is dereference to access the value of pointer variable
+    pointerOpBasic(aa,bb,ptr);
+    pointerOpBasic1(aa,bb,&aa);
+    pointerAsgn(aa,bb,ptr);
+    *ptr = bb;
+    printf("In the main -> *ptr = bb, will make value of a: %d, \tvalue of *ptr: %d\n",a,*ptr);
 
 
     return 0;
