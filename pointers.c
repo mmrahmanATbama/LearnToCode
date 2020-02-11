@@ -2,7 +2,9 @@
 
 void pointerOpBasic(int a, int b, int* ptr)
 {
+    printf("Function : pointerOpBasic\n"),
     printf("pointerOpBasic: The value of ptr is %d\n",*ptr);
+    printf("\n");
 
 }
 void pointerOpBasic1(int a, int b, int* ptr)
@@ -12,6 +14,7 @@ void pointerOpBasic1(int a, int b, int* ptr)
 }
 void pointerAsgn(int a, int b, int* ptr)
 {
+    printf("Function : pointerAsgn\n"),
     printf("PointerAsgn before assignment *ptr: %d\n",*ptr);
     printf("PointerAsgn before assignment  a  : %d\n",a);
     printf("PointerAsgn before assignment  b  : %d\n",b);
@@ -25,5 +28,22 @@ void pointerAsgn(int a, int b, int* ptr)
     b = 50;
     *ptr = b;
     printf("B value in the pointers.c is %d, *ptr is %d\n",b,*ptr);
+    printf("\n");
 
 }
+
+void pointerMath(int* a,int* b,int* ptr)
+{
+    printf("Function : pointerMath\n"),
+    printf("The value of aa %d, bb %d, *ptr %d \n",*a,*b,*ptr);
+    printf("The address of aa %p \n",a);
+    printf("The address of bb %p \n",b);
+    printf("The address of *ptr %p \n",ptr); // The address of bb and ptr should be same.
+
+    *a = *a + *b;   
+    printf("\n");
+ 
+
+}
+
+

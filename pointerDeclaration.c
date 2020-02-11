@@ -63,10 +63,22 @@ int main()
     printf("In the main -> *ptr = bb, will make value of aa: %d, \tvalue of *ptr: %d\n",aa,*ptr);
 
     // this is where aa values should change to 50, this is changed in the pointers
-   
+  
    pointerAsgn(aa,bb,ptr);
    printf("The value of aa %d, bb %d, *ptr %d\n",aa,bb,*ptr);
+   printf("\n");
 
+   // address arithmatic.
+   aa = 50; 
+   bb = 75;
+   ptr = &bb; 
+   
+  //  pointerMath(aa,bb,*ptr); // This should give error:pointerMath’ makes pointer from integer without a cast
+  //  pointerMath(&aa,&bb,*ptr); // error:  expected ‘int *’ but argument is of type ‘int’, 
+  pointerMath(&aa,&bb,ptr); 
+
+
+   
 
     return 0;
 } 
