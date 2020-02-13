@@ -889,8 +889,12 @@ char (*(*x[3]) ()) [5] → array[3] of pointers to function returning pointer to
 → → DO NOT USE COMPLICATED declaration 
 
 
-
-
+Example :
+	int x = 0;
+	int *px = &x;
+	//char *pcx = *x; // wrong, compile error due to type mismatch
+	char *pcx = (char *) &x; // this would work due to type conversion
+	pcx++ ; // this would now increment pointer by 1 instead of 4.
 
 
 
